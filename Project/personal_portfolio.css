@@ -1,44 +1,54 @@
 @import url("reset.css");
 
+/* project's responsiveness uses mobile first strategy */
+
 .container {
   display: grid;
-  grid-template-rows: repeat(3, auto);
-  grid-template-columns: minmax(500px, 650px); /* responsive on a 150px margin of scaling */
-  gap: 15vh;
+  grid-template-rows: repeat(3, auto);   /* splits to three main parts ( header, main, footer ) */
 }
 
+header, main {
+  padding: 60px;
+}
+
+header div,
+main h1, li {
+  margin-bottom: 50px;
+}
+
+/* HEADER */
 
 header {
   background-image: url('images/portfolio_header_background_small.jpg');
   background-repeat: no-repeat;
   filter: drop-shadow(0px 0px 5px rgb(78, 75, 75));
-  padding: 50px 50px 0px 50px;
-
-  display: grid;
-  grid-template-rows: repeat(3, auto);
-  gap: 35px;
 }
 
-.img-cont {
+header h1{
+  position: absolute;
+  color: white;
+  font-size: 3.4rem;
+  left: 16%;
+  top: 280px;
+  z-index: 1;
+}
+
+.profile img {
   position: relative;
   height: 380px;
-}
-
-.profile-image {
-  position: absolute;
-  height: 100%;
   width: 100%;
+  margin-bottom: 35px;
 }
 
-#profile-name {
-  position: absolute;
-  bottom: 10%;
-  margin-left: 20px;
-  color: white;
-  font-size: 3.7rem;
+.profile p:first-of-type {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+  padding: 15px;
 }
 
-.profile-info {
+.profile p:last-of-type {
+  color:  rgb(78, 75, 75);
   font-size: 2rem;
 }
 
@@ -47,6 +57,7 @@ header {
   grid-template-columns: repeat(3, max-content);
   justify-content: center;
   gap: 35px;
+  margin-bottom: unset;
 }
 
 .contact-links li {
@@ -54,44 +65,27 @@ header {
   width: 3rem;
 }
 
-main {
-  padding: 0px 50px 50px 50px;
-}
+/* MAIN */
 
-main figure{
-  display: grid;
-  grid-template-rows: 7rem auto;
-}
-
-main figcaption {
+main h1 {
   display: flex;
   justify-content: center;
-  align-items: end;
-  margin-bottom: 15px;
-  height: 4rem;
   font-size: 4rem;
 }
 
-main ul {
+main .project {
   display: grid;
-  grid-template-rows: repeat(6, auto);
-  gap: 35px;
-}
-
-main .item {
-  height: 500px;
-  display: grid;
-  grid-template-rows: 300px 200px;
+  grid-template-rows: 250px 150px;
   box-shadow: 10px 10px 15px rgb(78, 75, 75);
 }
 
-.item .screenshot {
+.project img {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-.item .detail {
+.project .detail {
   padding: 15px;
   display: grid;
   grid-template-rows: 1fr 2fr;
@@ -104,14 +98,13 @@ main .item {
 
 .detail > :last-child {
   margin-top: 15px;
-  font-size: 25px;
-  font-weight: bold;
+  font-size: 20px;
   overflow: auto;
-  color: rgb(78, 75, 75)
+  color: rgb(78, 75, 75);
 }
 
 .proj-name {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -119,33 +112,38 @@ main .item {
   padding: 10px;
 }
 
-.options {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
+.proj-links {
+  display: flex;
+  justify-content: end;
 }
 
-.options * {
-  align-self: center;
-  width: 50%;
+.proj-links * {
+  width: 8vw;
+  margin-right: 7px;
 }
 
+/* FOOTER */
 
 footer {
-  display: grid;
-  grid-template-rows: repeat(2, auto);
+  background-color: rgb(89, 89, 168);
 }
 
 footer > :first-child {
-  background-color: rgb(89, 89, 168);
   display: grid;
   grid-template-rows: repeat(4, auto);
   color: white;
   gap: 50px;
   padding: 35px;
-  box-sizing: border-box;
+}
+
+footer > :first-child em:first-of-type {
+  display: flex;
+  justify-content:center;
+  font-size: 4rem;
+}
+
+footer > :first-child em:last-of-type {
+  font-size: 2rem;
 }
 
 footer > :first-child p {
@@ -159,8 +157,112 @@ footer > :first-child ul {
 
 footer > :last-child {
   height: 750px;
+}
+
+.bg-image {
+  height: 100%;
   background-image: url('images/andrea-piacquadio-2.jpg');
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   transform: scaleX(-1);
   background-position-x: right;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 650px) {
+
+  #header-links,
+  header h1 br {
+    display: none;
+  }
+
+  header {
+    display: block;
+    position: relative;
+    background-size: 100% 465px;
+    height: 465px;
+  }
+
+  header h1 {
+    direction: unset;
+    top: 50px;
+    right: 30px;
+    text-align: end;
+    white-space: nowrap;
+    letter-spacing: .1vw;
+  }
+
+  .profile {
+    background-color: aliceblue;
+    height: calc(100% - 50px);
+    margin-top: 50px;
+    margin-bottom: -30px;
+    padding: 10px 15px 0 15px;
+  }
+
+  .profile img {
+    float: left;
+    height: 75%;
+    width: 50vw;
+    left: -35px;
+    top: -80px;
+    margin-bottom: -80px;
+    margin-right: -25px;
+  }
+
+  .profile p:first-of-type {
+    text-align: center;
+    font-size: 4vw;
+    font-weight: bolder;
+    margin-top: 50px;
+    padding: 15px;
+  }
+
+  .profile p:last-of-type {
+    font-size: 3.2vw;
+  }
+
+  main .project {
+    grid-template-rows: 200px 150px;
+  }
+
+  main ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, max(calc(100vw - 150px) / 2));
+    gap: 25px;
+  }
+
+  .proj-links * {
+    width: 30px;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer > :first-child em:first-of-type {
+    font-size: 5vw;
+  }
+
+  footer > :first-child em:last-of-type {
+    font-size: 3vw;
+  }
+
+  footer > :first-child p {
+    font-size: 2.5vw;
+  }
+
+  footer > :first-child ul {
+    font-size: 1.8rem;
+    padding-bottom: 40px;
+  }
+
+  footer > :last-child {
+    height: 500px;
+    padding: 50px;
+  }
+
+  .bg-image {
+    height: 100%;
+  }
 }
