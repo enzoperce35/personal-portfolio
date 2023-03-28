@@ -53,16 +53,17 @@ header h1{
 }
 
 .contact-links {
+  height: 2.5rem;
   display: grid;
   grid-template-columns: repeat(3, max-content);
   justify-content: center;
   gap: 35px;
-  margin-bottom: unset;
+  margin-top: 45px;
 }
 
 .contact-links li {
-  height: 3rem;
-  width: 3rem;
+  height: 100%;
+  width: 2.5rem;
 }
 
 /* MAIN */
@@ -227,7 +228,7 @@ footer > :last-child {
 
   main ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, max(calc(100vw - 150px) / 2));
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
 
@@ -252,9 +253,18 @@ footer > :last-child {
     font-size: 2.5vw;
   }
 
-  footer > :first-child ul {
-    font-size: 1.8rem;
-    padding-bottom: 40px;
+  .contact-links {
+    margin-top: unset;
+    height: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: left;
+    gap: 15px;
+  }
+
+  .contact-links li {
+    height: 100%;
+    width: 2rem;
   }
 
   footer > :last-child {
@@ -264,5 +274,124 @@ footer > :last-child {
 
   .bg-image {
     height: 100%;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+
+  header {
+    display: block;
+    position: relative;
+    background-size: 100% 465px;
+    height: 350px;
+  }
+
+  header h1 {
+    top: 250px;
+    left: 70px;
+    white-space: wrap;
+  }
+
+  .profile {
+    background-color: aliceblue;
+    height: 86%;
+    margin-top: 5px;
+    margin-bottom: -30px;
+    padding: 10px 20px 20px 0px;
+  }
+
+  .profile img {
+    float: left;
+    height: 128%;
+    width: 500px;
+    top: -38px;
+    margin-right: 25px;
+  }
+
+  .profile p:first-of-type {
+    text-align: left;
+    font-size: 2.3vw;
+    font-weight: bolder;
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .profile p:last-of-type {
+    font-size: 1.7vw;
+  }
+
+  #header-links {
+    height: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: end;
+    gap: 15px;
+    margin-top: 45px;
+  }
+
+  #header-links li {
+    height: 100%;
+    width: 1.5rem;
+  }
+
+  .contact-links {
+    margin-top: unset;
+    height: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: left;
+    gap: 15px;
+  }
+
+  .contact-links li {
+    height: 100%;
+    width: 2rem;
+  }
+
+  main .project {
+    grid-template-rows: 200px 150px;
+  }
+
+  main ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+  }
+
+  .proj-links * {
+    width: 30px;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer > :first-child em:first-of-type {
+    font-size: 50px;
+  }
+
+  footer > :first-child em:last-of-type {
+    font-size: 28px;
+  }
+
+  footer > :first-child p {
+    font-size: 22px;
+  }
+
+  footer > :first-child ul {
+    font-size: 1.8rem;
+    padding-bottom: 40px;
+  }
+
+  footer > :last-child {
+    height: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+  }
+
+  .bg-image {
+    background-size: contain;
+    background-position: center;
   }
 }
