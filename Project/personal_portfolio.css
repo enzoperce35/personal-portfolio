@@ -1,5 +1,15 @@
 @import url("reset.css");
 
+@font-face {
+  font-family: "roboto-bold";
+  src: url("fonts/RobotoBold-Xdoj.ttf");
+}
+
+@font-face {
+  font-family: "roboto-light";
+  src: url("fonts/RobotoLight-aW3R.ttf");
+}
+
 
 /*  codes for MOBILE up to TABLET and DESKTOP screen sizes */
 .container {
@@ -40,13 +50,14 @@ header h1{
 }
 
 .profile p:first-of-type {
+  font-family: 'roboto-bold';
   text-align: center;
   font-size: 2rem;
-  font-weight: bolder;
   padding: 15px;
 }
 
 .profile p:last-of-type {
+  font-family: 'roboto-light';
   color:  rgb(78, 75, 75);
   font-size: 2rem;
 }
