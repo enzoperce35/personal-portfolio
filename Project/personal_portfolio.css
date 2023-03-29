@@ -1,10 +1,10 @@
 @import url("reset.css");
 
-/* project's responsiveness uses mobile first strategy */
 
+/*  codes for MOBILE up to TABLET and DESKTOP screen sizes */
 .container {
   display: grid;
-  grid-template-rows: repeat(3, auto);   /* splits to three main parts ( header, main, footer ) */
+  grid-template-rows: repeat(3, auto);
 }
 
 header, main {
@@ -17,7 +17,6 @@ main h1, li {
 }
 
 /* HEADER */
-
 header {
   background-image: url('images/portfolio_header_background_small.jpg');
   background-repeat: no-repeat;
@@ -52,21 +51,27 @@ header h1{
   font-size: 2rem;
 }
 
-.contact-links {
-  height: 2.5rem;
+.user-links {
+  margin-top: 35px;
+  height: 2rem;
   display: grid;
   grid-template-columns: repeat(3, max-content);
   justify-content: center;
-  gap: 35px;
-  margin-top: 45px;
+  gap: 15px;
 }
 
-.contact-links li {
+.user-links li {
   height: 100%;
-  width: 2.5rem;
+  width: 2rem;
 }
 
 /* MAIN */
+
+main ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
 
 main h1 {
   display: flex;
@@ -160,6 +165,15 @@ footer > :last-child {
   height: 750px;
 }
 
+footer .user-links {
+  margin: unset;
+  height: 2.5rem;
+}
+
+footer .user-links li {
+  width: 2.5rem;
+}
+
 .bg-image {
   height: 100%;
   background-image: url('images/andrea-piacquadio-2.jpg');
@@ -169,115 +183,8 @@ footer > :last-child {
   background-position-x: right;
 }
 
-@media screen and (max-width: 1000px) and (min-width: 650px) {
-
-  #header-links,
-  header h1 br {
-    display: none;
-  }
-
-  header {
-    display: block;
-    position: relative;
-    background-size: 100% 465px;
-    height: 465px;
-  }
-
-  header h1 {
-    direction: unset;
-    top: 50px;
-    right: 30px;
-    text-align: end;
-    white-space: nowrap;
-    letter-spacing: .1vw;
-  }
-
-  .profile {
-    background-color: aliceblue;
-    height: calc(100% - 50px);
-    margin-top: 50px;
-    margin-bottom: -30px;
-    padding: 10px 15px 0 15px;
-  }
-
-  .profile img {
-    float: left;
-    height: 75%;
-    width: 50vw;
-    left: -35px;
-    top: -80px;
-    margin-bottom: -80px;
-    margin-right: -25px;
-  }
-
-  .profile p:first-of-type {
-    text-align: center;
-    font-size: 4vw;
-    font-weight: bolder;
-    margin-top: 50px;
-    padding: 15px;
-  }
-
-  .profile p:last-of-type {
-    font-size: 3.2vw;
-  }
-
-  main .project {
-    grid-template-rows: 200px 150px;
-  }
-
-  main ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-
-  .proj-links * {
-    width: 30px;
-  }
-
-  footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  footer > :first-child em:first-of-type {
-    font-size: 5vw;
-  }
-
-  footer > :first-child em:last-of-type {
-    font-size: 3vw;
-  }
-
-  footer > :first-child p {
-    font-size: 2.5vw;
-  }
-
-  .contact-links {
-    margin-top: unset;
-    height: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    justify-content: left;
-    gap: 15px;
-  }
-
-  .contact-links li {
-    height: 100%;
-    width: 2rem;
-  }
-
-  footer > :last-child {
-    height: 500px;
-    padding: 50px;
-  }
-
-  .bg-image {
-    height: 100%;
-  }
-}
-
-@media screen and (min-width: 1001px) {
+/* codes for DESKTOP down to TABLET screen sizes */
+@media screen and (min-width: 650px) {
 
   header {
     display: block;
@@ -303,7 +210,7 @@ footer > :last-child {
   .profile img {
     float: left;
     height: 128%;
-    width: 500px;
+    width: 450px;
     top: -38px;
     margin-right: 25px;
   }
@@ -320,46 +227,26 @@ footer > :last-child {
     font-size: 1.7vw;
   }
 
-  #header-links {
+  header .user-links {
     height: 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
     justify-content: end;
     gap: 15px;
-    margin-top: 45px;
   }
 
-  #header-links li {
-    height: 100%;
+  header .user-links li {
     width: 1.5rem;
-  }
-
-  .contact-links {
-    margin-top: unset;
-    height: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    justify-content: left;
-    gap: 15px;
-  }
-
-  .contact-links li {
-    height: 100%;
-    width: 2rem;
   }
 
   main .project {
     grid-template-rows: 200px 150px;
   }
 
-  main ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-  }
-
   .proj-links * {
     width: 30px;
+  }
+
+  main ul {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 
   footer {
@@ -390,8 +277,57 @@ footer > :last-child {
     box-sizing: border-box;
   }
 
+  footer .user-links {
+    justify-self: left;
+  }
+
   .bg-image {
-    background-size: contain;
     background-position: center;
+  }
+}
+
+/* codes for TABLET screen size */
+@media screen and (min-width: 650px) and (max-width: 1000px)  {
+
+  header .user-links,
+  header h1 br {
+    display: none;
+  }
+
+  header {
+    height: 465px;
+  }
+
+  header h1 {
+    direction: unset;
+    top: 50px;
+    right: 30px;
+    text-align: end;
+    white-space: nowrap;
+    letter-spacing: .1vw;
+  }
+
+  .profile {
+    margin-top: 50px;
+    padding: 10px 15px 0 15px;
+  }
+
+  .profile img {
+    height: 75%;
+    left: -35px;
+    width: 350px;
+    top: -80px;
+    margin-bottom: -80px;
+    margin-right: -25px;
+  }
+
+  .profile p:first-of-type {
+    text-align: center;
+    font-size: 4vw;
+    margin-top: 50px;
+  }
+
+  .profile p:last-of-type {
+    font-size: 3.2vw;
   }
 }
